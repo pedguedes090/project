@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .navbar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+  }
+
+  .sidebar {
+    width: 280px;
+    background-color: #f8f9fa;
+    height: 100vh;
+    padding: 1rem;
+  }
+
+  .sidebar p {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar ul li a img {
+    margin-right: 0.5rem;
+  }
+
+  .content {
+    padding: 1rem;
+    flex: 1;
+  }
+
+  .board-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .board-card .board-title {
+    position: absolute;
+    bottom: 100;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  .board-card .editon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 20%;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;      
+    font-size: 1.2rem;
+    display: none;
+  }
+  .board-card .deleteon {
+    position: absolute;
+    top : 0;
+    right: 0;
+    width: 20%;
+    height: 20%;
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;      
+    font-size: 1.2rem;
+    display: none;
+  }
+  .board-card:hover .editon {
+    display: block;
+  }
+  .board-card:hover .deleteon {
+    display: block;
+  }
+  .board-card button {
+    height: 200px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title h2 {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .board-card1 {
+    width: 108px;
+    height: 60px;
+  }

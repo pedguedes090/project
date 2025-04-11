@@ -1,0 +1,100 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb; 
+    color: #333;              
+  }
+
+  .container {
+    min-height: 100vh; 
+  }
+
+  .container img {
+    width: 120px; 
+    margin-bottom: 20px;
+  }
+
+  .container h4 {
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .container input[type="email"],
+  .container input[type="text"],
+  .container input[type="password"] {
+    display: block;
+    width: 300px;         
+    max-width: 100%;
+    padding: 10px 15px;
+    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .container input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .login {
+    width: 300px; 
+    max-width: 100%;
+    background-color: #0D6EFD;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .Sign-up{
+    width: 300px; 
+    max-width: 100%;
+    background-color: #0D6EFD;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .login:hover {
+    background-color: #026aa7;
+  }
+  .Sign-up:hover {
+    background-color: #026aa7;
+  }
+  .container p {
+    margin-top: 10px;
+    margin-bottom: 0; 
+  }
+  .container a {
+    color: #0079bf;
+    text-decoration: none;
+  }
+  
+  .container a:hover {
+    text-decoration: underline;
+  }
+
+  .container p:last-child {
+    margin-top: 20px;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+  }
+  h4{padding-right:145px ;}
+  .remember{
+    padding-right:170px ;
+  }
+  .alert-danger img{
+    margin-right: 5px;
+  }
+  .alert-success img{
+    margin-right: 5px;
+  }

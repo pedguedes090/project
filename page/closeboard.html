@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #f8f9fa;
+      padding: 1rem;
+    }
+
+    .sidebar {
+      width: 280px;
+      background-color: #f8f9fa;
+      height: 100vh;
+      padding: 1rem;
+    }
+
+    .sidebar p {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar ul li a img {
+      margin-right: 0.5rem;
+    }
+
+    .content {
+      padding: 1rem;
+      flex: 1;
+    }
+
+    .board-card {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .board-card .board-title {
+      position: absolute;
+      bottom: 100;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .board-card .editon {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+      height: 20%;
+      margin-bottom: 0.5rem;
+      margin-left: 0.5rem;      
+      font-size: 1.2rem;
+    }
+
+    .board-card button {
+      height: 200px;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ced4da;
+      background-color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title h2 {
+      margin-left: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .board-card1 {
+      width: 108px;
+      height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="/assets/images/trello-logo.png.png" width="50" alt="Logo" />
+        <span class="ms-2">Dashboard</span>
+      </a>
+      <!-- Nút toggle Offcanvas cho mobile -->
+      <button class="btn d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar"
+        aria-controls="offcanvasSidebar">
+        <img src="/assets/icons/sidebar-icon.png" alt="Sidebar Icon" width="30" />
+      </button>
+    </div>
+  </nav>
+
+  <div class="d-flex">
+    <!-- Sidebar cho PC (chỉ hiển thị trên md trở lên) -->
+    <div class="sidebar d-none d-md-block">
+      <p>Your workspaces</p>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/IconBoards.png" alt="">Boards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/IconStarredBoards.png" alt="">Starred Boards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/IconClosedBoards.png" alt="">Closed Boards</a>
+        </li>
+      </ul>
+      <hr>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/Settings.png" alt="">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/page/login.html"><img src="/assets/icons/Signout.png" alt="" id="signOut">Sign out</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Main Content -->
+    <main class="content">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2">Your Workspaces</h1>
+        <div>
+          <button class="btn btn-outline-secondary me-2">Share</button>
+          <button class="btn btn-outline-secondary me-2">Export</button>
+          <button class="btn btn-outline-secondary">
+            <i class="far fa-calendar-alt"></i> This week <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Boards Section -->
+      <div class="row g-3 mb-4 " id="boardSection">
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="board-card" style="background-image: url('/assets/images/das1.png')">
+            <div class="board-title">Board Title 01</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="board-card" style="background-image: url('/assets/images/das2.png')">
+            <div class="board-title">Board Title 02</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="board-card" style="background-image: url('/assets/images/das3.png')">
+            <div class="board-title">Board Title 03</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="board-card" style="background-image: url('/assets/images/das4.png')">
+            <div class="board-title">Board Title 04</div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-6 col-md-6 col-lg-3">
+        <div class="board-card mb-4 d-flex align-items-center justify-content-center" >
+          <button type="button" class="btn btn-light border" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create new board
+          </button>
+        </div>
+      </div>
+      
+
+      <!-- Các nút trigger modal khác -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteboard">
+        xoá board
+      </button>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editboard">
+        chỉnh sửa board
+      </button>
+    </main>
+  </div>
+
+  <!-- Offcanvas Sidebar cho mobile -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Your workspaces</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/IconBoards.png" alt="">Boards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/IconStarredBoards.png" alt="">Starred Boards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/IconClosedBoards.png" alt="">Closed Boards</a>
+        </li>
+      </ul>
+      <hr>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/assets/icons/Settings.png" alt="">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/page/login.html"><img src="/assets/icons/Signout.png" alt="" id="signOut">Sign out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal Create Board -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="formreate">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editboardLabel">Edit board</h5>
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Background</h4>
+          <div class="row g-3 mb-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background.png')">
+                <input type="radio" name="color" id="bg1" value="/assets/images/Background.png">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background2.png')">
+                <input type="radio" name="color" id="bg2" value="/assets/images/Background2.png">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background3.png')">
+                <input type="radio" name="color" id="bg3" value="/assets/images/Background3.png">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background4.png')">
+                <input type="radio" name="color" id="bg4" value="/assets/images/Background4.png">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h4>Color</h4>
+          <div class="row g-3 mb-6">
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_1.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color1" value="/assets/images/Background_color_1.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_2.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color2" value="/assets/images/Background_color_2.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_3.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color3" value="/assets/images/Background_color_3.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_4.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color4" value="/assets/images/Background_color_4.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_5.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color5"  value="/assets/images/Background_color_5.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_6.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color6" value="/assets/images/Background_color_6.png">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h4>Board title</h4>
+          <div>
+            <input style="height: 56px;" type="text" name="boardTitle" id="boardTitle"
+              placeholder="E.g. Shopping list for birthday..." class="form-control" />
+          </div>
+          <div>
+            <p>👋 Please provide a valid board title.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <input type="submit" value="Create" class="btn btn-primary" id="createBoardBtn">
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Delete Board -->
+  <div class="modal fade" id="deleteboard" tabindex="-1" role="dialog" aria-labelledby="deleteboardLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="deleteboard" >
+        <div class="modal-header">
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          bạn có muốn xoá board này không?
+         
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">có</button>
+          <button type="button" class="btn btn-primary">không</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit Board -->
+  <div class="modal fade" id="editboard" tabindex="-1" role="dialog" aria-labelledby="editboardLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="formeditboard">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editboardLabel">Edit board</h5>
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Background</h4>
+          <div class="row g-3 mb-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background.png')">
+                <input type="radio" name="color" id="bg1" value="/assets/images/Background.png">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background2.png')">
+                <input type="radio" name="color" id="bg2" value="/assets/images/Background2.png">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background3.png')">
+                <input type="radio" name="color" id="bg3" value="/assets/images/Background3.png">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="board-card1 text-center position-relative d-flex align-items-center justify-content-center" style="background-image: url('/assets/images/Background4.png')">
+                <input type="radio" name="color" id="bg4" value="/assets/images/Background4.png">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h4>Color</h4>
+          <div class="row g-3 mb-6">
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_1.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color1" value="/assets/images/Background_color_1.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_2.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color2" value="/assets/images/Background_color_2.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_3.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color3" value="/assets/images/Background_color_3.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_4.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color4" value="/assets/images/Background_color_4.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_5.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color5"  value="/assets/images/Background_color_5.png">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="text-center position-relative d-flex align-items-center justify-content-center"
+                style="background-image: url('/assets/images/Background_color_6.png'); background-size: cover; width: 70px; height: 40px;">
+                <input type="radio" name="color" id="color6" value="/assets/images/Background_color_6.png">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h4>Board title</h4>
+          <div>
+            <input style="height: 56px;" type="text" name="editboardTitle" id="editboardTitle"
+              placeholder="E.g. Shopping list for birthday..." class="form-control" />
+          </div>
+          <div>
+            <p>👋 Please provide a valid board title.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <input type="submit" value="Create" class="btn btn-primary" id="createBoardBtn">
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <script src="/js/closeboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

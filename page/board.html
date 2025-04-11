@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/board.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.3.0/ckeditor5.css">
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css
+" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/assets/images/trello-logo.png.png" width="50" alt="">
+                <span class="ms-2">Dashboard</span>
+            </a>
+        </div>
+    </nav>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <p>Your workspaces</p>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="/assets/icons/IconBoards.png" alt="">Boards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="/assets/icons/IconStarredBoards.png" alt="">Starred
+                        Boards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/page/closeboard.html"><img src="/assets/icons/IconClosedBoards.png" alt="">Closed Boards</a>
+                </li>
+            </ul>
+            <hr>
+            <div>
+                <p><b>your boards</b></p>
+
+            </div>
+            <ul class="nav flex-column" id="list-board">
+                <li class="d-flex align-items-center">
+                    <img src="/assets/images/Background.png" alt="" width="24px" height="20px" class="me-3">
+                    <span class="mb-0">12312442</span>
+                </li>
+                <li class="d-flex align-items-center">
+                    <img src="/assets/images/Background2.png" alt="" width="24px" height="20px" class="me-3">
+                    <span class="mb-0">12312442</span>
+                </li>
+                <li class="d-flex align-items-center">
+                    <img src="/assets/images/Background3.png" alt="" width="24px" height="20px" class="me-3">
+                    <span class="mb-0">12312442</span>
+                </li>
+                <li class="d-flex align-items-center">
+                    <img src="/assets/images/Background4.png" alt="" width="24px" height="20px" class="me-3">
+                    <span class="mb-0">12312442</span>
+                </li>
+            </ul>
+        </div>
+        <main class="content d-block">
+            <div class="navv2 d-flex justify-content-between">
+                <div class="d-flex  align-items-center">
+                    <h1 class="h2 m-2" id="nameboard">Your Workspaces</h1>
+                    <img src="/assets/icons/Starorunstarboard1.png" alt="" id="starboard">
+                    <button class="btn btn-outline-secondary d-flex align-items-center me-2">boad</button>
+                    <button class="btn btn-outline-secondary d-flex align-items-center me-2"><img
+                            src="/assets/icons/table.png" alt="">table</button>
+                    <button class="btn btn-outline-secondary d-flex align-items-center me-2    " data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <img src="/assets/icons/close-icon.png" alt="Close" width="16" height="16" class="me-1">
+                        Close this board
+                    </button>
+                </div>
+                <div class="m-2">
+                    <button class="btn btn-outline-secondary me-2"><img src="/assets/icons/filters.png"
+                            alt="">Filters</button>
+                </div>
+            </div>
+            <div class="row mt-4 ms-3" id="main-task">
+                <div class="todo col-3 border rounded ms-3 " id="listtask">
+                    <div class="navtodo d-flex justify-content-between">
+                        <p>todo</p>
+                        <span>🤦‍♂️🤞</span>
+                    </div>
+                    <div id="todo">
+                        <div class="contentodo border rounded shadow-lg bg-light  mb-2 p-2">
+                            <div>
+                                <span>✅</span><span>thue dj</span>
+                            </div>
+                        </div>
+                        <div class="contentodo border rounded shadow-lg bg-light p-2 mb-2">
+                            <div>
+                                <span>✅</span><span>thue dj</span>
+                            </div>
+                        </div>
+                        <div class="contentodo border rounded shadow-lg bg-light p-2 mb-2">
+                            <div>
+                                <span>✅</span><span>thue dj</span>
+                            </div>
+                        </div>
+                        <div class="contentodo border rounded shadow-lg bg-light p-2 mb-2">
+                            <div>
+                                <span>✅</span><span>thue dj</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <span>+ Add card</span>
+                        <span>🎶</span>
+                    </div>
+                </div>
+                <div class="todo col-3 border rounded ms-3 h-25">
+                    <div class="navtodo d-flex justify-content-between">
+                        <p>In-progress</p>
+                        <span>🤦‍♂️🤞</span>
+                    </div>
+                    <div class="contentodo border rounded shadow-lg bg-light p-2 mb-2">
+                        <div>
+                            <span>thue dj</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>+ Add card</span>
+                        <span>🎶</span>
+                    </div>
+                </div>
+                <div class="todo col-3 border rounded ms-3 h-25 ">
+                    <div class=" d-flex justify-content-between align-items-center " data-bs-toggle="modal"
+                        data-bs-target="#addlist">
+                        <p class="pt-2">+ Add another list</p>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <!-- Modal -->
+        <div class="modal fade" id="addlist" tabindex="-1" aria-labelledby="addlistLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="addlistlLabel">thêm mới list công việc </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="addListForm">
+                        <div class="modal-body">
+                            <input type="text" class="form-control mb-3" placeholder="List title"
+                                aria-label="List title" id="listTitle">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" value="Save changes" class="btn btn-primary" data-bs-dismiss="modal">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="/assets/images/close_board.png" alt="">
+                        </div>
+                        <div class="text-center">
+                            <h2>Are you sure?</h2>
+                            <span>You won't be able to revert this!</span>
+                        </div>
+                    </div>
+                    <form id="formCloseBoard">
+                        <div class="modal-footer d-flex justify-content-center">
+
+                            <input type="submit" value="Yes, close it!" class="btn btn-primary" data-bs-dismiss="modal">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal1" aria-labelledby="exampleModal1Label" tabindex="-1"
+            style="display: none;" aria-hidden="true">
+            <div class="modal-dialog ">
+
+                <div class="modal-content" style="width: 150%;">
+                    <div class="modal-body ">
+                        <h3>kịch bản </h3>
+                        <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasstart" aria-controls="offcanvasstart">
+                            <img src="/assets/images/in_progress.png" alt="">
+                        </div>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasstart"
+                            aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="p-3 w-75">
+                                    <p class="fw-bold">Select Destination</p>
+                                    <span><b>Board</b></span>
+                                    <input type="text" class="form-control mb-3" placeholder="Search boards"
+                                        aria-label="Search boards">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="listSelect" class="form-label">List</label>
+                                            <select class="form-select" id="listSelect">
+                                                <option value="">In-progress</option>
+                                                <option value="">Yes</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="positionSelect" class="form-label">Position</label>
+                                            <select class="form-select" id="positionSelect">
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <button class="btn btn-primary w-100">Move</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Main Content -->
+                            <div class="col-md-8">
+                                <!-- Description Section -->
+                                <div class="section-header">
+                                    <i class="bi bi-list"></i>
+                                    <span>Description</span>
+                                </div>
+                                <div class="px-4 pb-4">
+                                    <!-- Editor Toolbar -->
+                                    <div class="editor-toolbar">
+                                        <div class="toolbar-group">
+                                            <button class="toolbar-btn dropdown-toggle">
+                                                <span style="font-family: serif; font-weight: bold;">Aa</span>
+                                            </button>
+                                        </div>
+                                        <div class="toolbar-group">
+                                            <button class="toolbar-btn"><i class="bi bi-type-bold"></i></button>
+                                            <button class="toolbar-btn"><i class="bi bi-type-italic"></i></button>
+                                            <button class="toolbar-btn"><i class="bi bi-three-dots"></i></button>
+                                        </div>
+                                        <div class="toolbar-group">
+                                            <button class="toolbar-btn dropdown-toggle">
+                                                <i class="bi bi-list-ul"></i>
+                                            </button>
+                                        </div>
+                                        <div class="toolbar-group">
+                                            <button class="toolbar-btn"><i class="bi bi-link-45deg"></i></button>
+                                            <button class="toolbar-btn"><i class="bi bi-image"></i></button>
+                                            <button class="toolbar-btn dropdown-toggle"><i
+                                                    class="bi bi-plus"></i></button>
+                                        </div>
+                                        <div class="toolbar-group">
+                                            <button class="toolbar-btn"><i class="bi bi-scissors"></i></button>
+                                        </div>
+                                        <div class="toolbar-group">
+                                            <button class="toolbar-btn"><i class="bi bi-paperclip"></i></button>
+                                            <button class="toolbar-btn"><i class="bi bi-markdown"></i></button>
+                                            <button class="toolbar-btn"><i class="bi bi-question"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- Editor Content -->
+                                    <textarea class="editor-content w-100" name="" id="modalTitleInput"></textarea>
+                                    <!-- Action Buttons -->
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary" id="save-btn">Save</button>
+                                        <button class="btn btn-light ms-2" onclick="hideModal()">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="sidebar-section">
+                                    <div class="sidebar-section-title " data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <i class="bi bi-tag"></i>
+                                        <span>Labels</span>
+                                    </div>
+                                </div>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                                    aria-labelledby="offcanvasRightLabel">
+                                    <div class="offcanvas-header d-flex">
+                                        <span>🦎&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span>Create label</span>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <div class="p-3" aria-labelledby="label">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center mt-3 mb-3 w-75">
+
+                                            </div>
+                                            <div>
+                                                <span>Title</span>
+                                                <input type="text" class="form-control mb-3" placeholder="Label title">
+                                            </div>
+                                            <span>Select a color</span>
+                                            <div class="row ">
+                                                <div class="col-2-4"><img src="/assets/images/green1.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/yellow1.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/orange1.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/red1.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/purple1.png" alt=""></div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-2-4"><img src="/assets/images/green.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/yellow.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/orange.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/red.png" alt=""></div>
+                                                <div class="col-2-4"><img src="/assets/images/purple.png" alt=""></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sidebar-section">
+                                    <div class="sidebar-section-title" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight1">
+                                        <i class="bi bi-calendar"></i>
+                                        <span>Dates</span>
+                                    </div>
+                                </div>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1"
+                                    aria-labelledby="offcanvasRightLabel">
+                                    <div class="offcanvas-header text-center">
+                                        <h5 id="offcanvasRightLabel" class="text-center">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date
+                                        </h5>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                    </div>
+                                </div>
+                                <div class="sidebar-section">
+                                    <div class="sidebar-section-title">
+                                        <span><button id="deletetasktest" class="btn btn-danger">delete</button></span>
+                                    </div>
+                                </div>
+                                <!-- Offcanvas -->
+                                <div class="offcanvas offcanvas-end" id="offcanvasExample2" tabindex="-1"
+                                    aria-labelledby="offcanvasExampleLabel2">
+                                    <div class="offcanvas-header">
+                                        <h1 class="offcanvas-title fs-5" id="offcanvasExampleLabel2">Offcanvas 2</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <div class="d-flex justify-content-center mb-3">
+                                            <img src="/assets/images/close_board.png" alt="">
+                                        </div>
+                                        <div class="text-center">
+                                            <h2>Are you sure?</h2>
+                                            <span>You won't be able to revert this!</span>
+                                        </div>
+                                        <div class="mt-3">
+                                            <form id="formDeleteTask">
+                                                <input type="submit" value="Yes, close it!" class="btn btn-primary"
+                                                    data-bs-dismiss="modal" id="deleteTaskBtn">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-outline-secondary d-flex align-items-center me-2    " data-bs-toggle="modal"
+        data-bs-target="#exampleModal1">
+        <img src="/assets/icons/close-icon.png" alt="Close" width="16" height="16" class="me-1">
+        edit chi tiết
+    </button>
+    <button class="btn btn-outline-secondary d-flex align-items-center me-2    " data-bs-toggle="modal"
+        data-bs-target="#deletelist">
+        <img src="/assets/icons/close-icon.png" alt="Close" width="16" height="16" class="me-1">
+        datele list
+    </button>
+    <div class="modal fade" id="deletelist" tabindex="-1" aria-labelledby="deletelistLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="d-flex justify-content-center mb-3">
+
+                        <img src="/assets/images/close_board.png" alt="">
+                    </div>
+                    <div class="text-center">
+                        <h2>Are you sure?</h2>
+                        <span>You won't be able to revert this!</span>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Yes, close it!</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js
+"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/js/board.js"></script>
+</body>
+
+</html>

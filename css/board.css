@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.navv2 {
+    background-color: rgba(220, 221, 221, 0.216);
+}
+
+.sidebar {
+    width: 280px;
+    background-color: #f8f9fa;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.sidebar p {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a img {
+    margin-right: 0.5rem;
+}
+
+.content {
+    flex: 1;
+}
+
+.todo {
+    background-color: #ced4da56;
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #172b4d;
+    border-top: 1px solid #dfe1e6;
+    margin-top: 10px;
+}
+
+.section-header i {
+    margin-right: 10px;
+}
+
+.editor-toolbar {
+    border: 1px solid #dfe1e6;
+    border-radius: 5px 5px 0 0;
+    padding: 8px;
+    background-color: #f4f5f7;
+}
+
+.toolbar-group {
+    display: inline-flex;
+    border-right: 1px solid #dfe1e6;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+.toolbar-group:last-child {
+    border-right: none;
+}
+
+.toolbar-btn {
+    background: none;
+    border: none;
+    color: #42526e;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.editor-content {
+    border: 1px solid #dfe1e6;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    min-height: 250px;
+    padding: 15px;
+}
+
+.sidebar-section {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dfe1e6;
+}
+
+.sidebar-section-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #172b4d;
+    padding: 5px 0;
+}
+
+.sidebar-section-title i {
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #0052cc;
+    border-color: #0052cc;
+}
+
+.dropdown-toggle::after {
+    vertical-align: middle;
+}
+
+.col-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+#main-task {
+    display: flex;
+    align-items: flex-start;
+}
+
+#starboard {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
