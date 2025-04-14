@@ -21,7 +21,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="/page/dashboard.html">
                 <img src="/assets/images/trello-logo.png.png" width="50" alt="">
                 <span class="ms-2">Dashboard</span>
             </a>
@@ -352,6 +352,15 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
+                                        <form >
+                                            <input type="date" name="start date" id="StartDate" class="form-control mb-3"
+                                            placeholder="Start date">
+                                        <input type="date" name="due date" id="DueDate" class="form-control mb-3"
+                                            placeholder="Due date">
+                                        <input id="dateSubmit" type="submit" value="Save changes" 
+                                        data-bs-dismiss="offcanvas">
+                                        </form>
+                                        
                                     </div>
                                 </div>
                                 <div class="sidebar-section">

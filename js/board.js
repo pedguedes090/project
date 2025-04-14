@@ -1,4 +1,3 @@
-
 let data = JSON.parse(localStorage.getItem("users")) || {};
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 console.log(currentUser);
@@ -177,7 +176,30 @@ function editTask(taskId) {
         // Ẩn modal
         editModal.hide();
     };
-    // Xử lý sự kiện xoá task
+    
+    let dateSubmit = document.getElementById("dateSubmit");
+
+    // Thêm sự kiện submit đúng cách
+    dateSubmit.addEventListener("click", function (event) {
+        event.preventDefault();
+        let StartDate = document.getElementById("StartDate");
+        let DueDate = document.getElementById("DueDate");
+        let startDateValue = StartDate.value.trim();
+        let dueDateValue = DueDate.value.trim();
+        if (startDateValue === "") {
+            alert("Start date không được để trống!");
+            return;
+        }
+        if (dueDateValue === "") {
+            alert("Due date không được để trống!");
+            return;
+        }
+        task.created_at = startDateValue;
+        task.due_date = dueDateValue;
+        localStorage.setItem("users", JSON.stringify(data));
+        StartDate.value = "";
+        DueDate.value = "";
+    });
     // let formDeleteTask = document.getElementById("swal2-confirm");
     // formDeleteTask.addEventListener("click", function (event) {
     //     event.preventDefault();
