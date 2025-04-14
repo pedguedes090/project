@@ -91,15 +91,11 @@ function renderBoard() {
     // Phần cuối: nút "Add another list" liên kết với modal
     let addListDiv = document.createElement("div");
     addListDiv.className = "todo col-3 border rounded ms-3 h-auto";
-    let addListInner = document.createElement("div");
-    addListInner.className = "d-flex justify-content-between align-items-center";
-    addListInner.setAttribute("data-bs-toggle", "modal");
-    addListInner.setAttribute("data-bs-target", "#addlist");
-    let addListP = document.createElement("p");
-    addListP.className = "pt-2";
-    addListP.textContent = "+ Add another list";
-    addListInner.appendChild(addListP);
-    addListDiv.appendChild(addListInner);
+    addListDiv.innerHTML = `
+        <div class="d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#addlist">
+            <p class="pt-2">+ Add another list</p>
+        </div>
+    `;
     mainTask.appendChild(addListDiv);
 }
 // Hàm tạo 1 card task đã có
@@ -179,7 +175,7 @@ function editTask(taskId) {
     
     let dateSubmit = document.getElementById("dateSubmit");
 
-    // Thêm sự kiện submit đúng cách
+
     dateSubmit.addEventListener("click", function (event) {
         event.preventDefault();
         let StartDate = document.getElementById("StartDate");
@@ -266,8 +262,8 @@ function renderAddCardForm(listIndex) {
 }
 // Sự kiện cho form "Add list" (modal)
 document.getElementById("addListForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của form
-    let listTitle = document.getElementById("listTitle").value.trim(); // Lấy giá trị tiêu đề list từ input
+    event.preventDefault();
+    let listTitle = document.getElementById("listTitle").value.trim(); 
 
     if (listTitle === "") {
         alert("Tiêu đề list không được để trống!");
@@ -284,13 +280,7 @@ document.getElementById("addListForm").addEventListener("submit", function (even
     localStorage.setItem("users", JSON.stringify(data));
     // Render lại board sau khi thêm list mới
     renderBoard();
-    // Đóng modal sau khi thêm list
-    let modalEl = document.getElementById("addlist");
-    // Sử dụng bootstrap Modal instance để ẩn modal (nếu đã khởi tạo)
-    let modalInstance = bootstrap.Modal.getInstance(modalEl);
-    if (modalInstance) {
-        modalInstance.hide();
-    }
+    
 });
 // Gọi hàm render khi trang được tải
 renderBoard();
