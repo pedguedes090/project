@@ -1,6 +1,6 @@
 let data = JSON.parse(localStorage.getItem("users")) || {};
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-console.log(currentUser);
+
 if (currentUser === "" || currentUser === null) {
     window.location.href = "login.html";
 }
@@ -26,8 +26,7 @@ function renderBoard() {
     } else {
         starboard.src = "/assets/icons/Starorunstarboard1.png";
     }
-    // Lặp qua từng list trong board
-    board.lists.forEach((list, listIndex) => {        // Tạo container cho list
+    board.lists.forEach((list, listIndex) => {   
         let listContainer = document.createElement("div");
         listContainer.className = "todo col-3 border rounded ms-3";
         listContainer.innerHTML = `
@@ -269,7 +268,6 @@ document.getElementById("addListForm").addEventListener("submit", function (even
         alert("Tiêu đề list không được để trống!");
         return;
     }
-    // Tạo một list mới và thêm vào board
     let newList = {
         id: Date.now(),
         title: listTitle,
@@ -278,7 +276,6 @@ document.getElementById("addListForm").addEventListener("submit", function (even
     };
     board.lists.push(newList);
     localStorage.setItem("users", JSON.stringify(data));
-    // Render lại board sau khi thêm list mới
     renderBoard();
     
 });
@@ -299,9 +296,9 @@ for (i = 0; i < data.users[currentUser].boards.length; i++) {
     list.addEventListener("click", function () {
         id = this.getAttribute("data-id");
         board = data.users[currentUser].boards[id];
-        console.log(id)
+        
         renderBoard();
-        console.log(board)
+        
     })
 }
 

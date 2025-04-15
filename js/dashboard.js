@@ -192,7 +192,6 @@ if (currentUser===""||currentUser===null) {
     window.location.href = "login.html";
 }
 
-console.log(currentUser);
 let starBoardSection = document.getElementById("starboard")
 let data = JSON.parse(localStorage.getItem("users")) || [];
 let boardSection = document.getElementById("boardSection")
@@ -234,7 +233,6 @@ function renderBoards() {
     `;
         boardSection.appendChild(boardItem);
     }
-    
 }
 
 
